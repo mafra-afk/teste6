@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniversário Nicolly Eduarda</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fce4ec;
+            background-image: url('https://img.freepik.com/vetores-gratis/fundo-monocromatico-pintado-a-mao-com-elementos-da-natureza-desenhados_52683-63005.jpg'); /* Imagem de flores */
+            background-size: cover; /* Para cobrir todo o fundo */
+            background-position: center; /* Centraliza a imagem */
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 50px 0;
+            background-color: rgba(216, 27, 96, 0.8); /* Rosa forte com transparência */
+            color: white;
+        }
+        .intro, .confirmation, .messages, .thank-you {
+            background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com transparência */
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            margin: 0;
+        }
+        h1 {
+            font-size: 36px;
+        }
+        h2 {
+            font-size: 24px;
+        }
+        h3 {
+            color: #d81b60; /* Rosa forte */
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #d81b60; /* Rosa forte */
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #c2185b; /* Rosa mais escuro */
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #e91e63; /* Rosa */
+            color: white;
+        }
+        .hidden {
+            display: none; /* Para esconder a tela de agradecimento inicialmente */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>꧁𝓝𝓲𝓬𝓸𝓵𝓵𝔂 𝓔𝓭𝓾𝓪𝓻𝓭𝓪꧂</h1>
+        <h2>𝕸𝖊𝖚𝖘 15 𝕬𝖓𝖔𝖘</h2>
+    </header>
+
+    <section class="intro">
+        <p>𝒱ℴ𝒸ℯ̂ ℯ𝓈𝓉𝒶́ 𝒸ℴ𝓃𝓋𝒾𝒹𝒶𝒹ℴ 𝓅𝒶𝓇𝒶 𝓊𝓂𝒶 𝓃ℴ𝒾𝓉ℯ 𝓂𝒶́ℊ𝒾𝒸𝒶 ℯ𝓂 𝒸ℯ𝓁ℯ𝒷𝓇𝒶𝒸̧𝒶̃ℴ 𝒶ℴ𝓈 15 𝒶𝓃ℴ𝓈 𝒹𝒶 𝒩𝒾𝒸ℴ𝓁𝓁𝓎 ℰ𝒹𝓊𝒶𝓇𝒹𝒶!</p>
+        <p><strong>Data:</strong> 15 de março de 2025</p>
+        <p><strong>Local:</strong> Rua Imirim, 476 - Jandira, SP</p>
+    </section>
+
+    <section class="confirmation">
+        <h3>Confirme sua Presença</h3>
+        <form id="rsvpForm">
+            <label for="name">Seu Nome:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Seu E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="rsvp">Você vai comparecer?</label>
+            <select id="rsvp" name="rsvp" required>
+                <option value="">Selecione...</option>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <section class="messages">
+        <h3>Deixe suas Mensagens e Fotos</h3>
+        <form id="messageForm">
+            <textarea placeholder="Escreva sua mensagem para a Nicolly..." required></textarea>
+            <input type="file" accept="image/,video/" required> 
+            <button type="submit">Enviar Mensagem</button>
+        </form>
+    </section>
+
+    <section class="thank-you hidden" id="thankYouSection">
+        <h3>Obrigado!</h3>
+        <p>Sua confirmação foi recebida com sucesso. Esperamos ver você na festa!</p>
+    </section>
+
+    <footer>
+        <p>Esperamos ver você lá!</p>
+        <p>&copy; 2025 Festa de Aniversário da Nicolly Eduarda</p>
+    </footer>
+
+    <script>
+        document.getElementById('rsvpForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            document.querySelector('.confirmation').style.display = 'none'; 
+            document.getElementById('thankYouSection').classList.remove('hidden'); 
+        });
+
+        document.getElementById('messageForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            alert('Mensagem enviada com sucesso!'); 
+            this.reset(); 
+        });
+    </script>
+</body>
+</html>
